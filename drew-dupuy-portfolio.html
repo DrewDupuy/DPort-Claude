@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drew Dupuy – Designer, Web &amp; Digital Marketing</title>
+<meta name="description" content="Drew Dupuy: graphic designer, WordPress web designer and digital marketer based in Kloof, KwaZulu-Natal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafafa;--ink:#1a1112;--mute:#6b5f60;--line:#e6dede;--blood:#b3121f;--deep:#5e0a12;--card:#fff}
+[data-theme=dark]{--bg:#150c0d;--ink:#f5eded;--mute:#a8999a;--line:#2e1d1f;--blood:#e0303e;--deep:#7a0f1a;--card:#1d1213}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 'DM Sans',system-ui,sans-serif;transition:background .3s,color .3s;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Bricolage Grotesque','Arial Black',sans-serif;line-height:1;letter-spacing:-.03em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blood);outline-offset:3px}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(16px,4vw,48px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font:800 22px 'Bricolage Grotesque',sans-serif;text-decoration:none;letter-spacing:-.04em}
+.logo i{display:inline-block;width:.42em;height:.42em;background:var(--blood);border-radius:50% 50% 50% 0;transform:rotate(-45deg);margin-left:3px;cursor:pointer;transition:transform .3s}
+.logo i:active{transform:rotate(-45deg) scale(1.6)}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:6px 12px;border-radius:99px;text-decoration:none;font-weight:500;font-size:15px;color:var(--mute);transition:.2s}
+nav a:hover{color:var(--ink)}
+nav a.on{background:var(--blood);color:#fff}
+#theme{border:1px solid var(--line);background:none;color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px}
+main{min-height:80vh}
+.page{display:none;padding:clamp(32px,6vw,80px) clamp(16px,4vw,48px);max-width:1180px;margin:auto}
+.page.on{display:block;animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+h2{font-size:clamp(40px,7vw,84px);margin-bottom:28px}
+h2 b{color:var(--blood)}
+.lead{font-size:clamp(18px,2.2vw,23px);max-width:34em;color:var(--mute)}
+.btn{display:inline-block;padding:13px 24px;border-radius:99px;background:var(--blood);color:#fff;text-decoration:none;font-weight:700;border:2px solid var(--blood);cursor:pointer;font:700 16px 'DM Sans',sans-serif;transition:.2s}
+.btn:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+/* hero */
+#home{padding-top:clamp(40px,9vw,110px)}
+.hero{font-size:clamp(64px,15vw,190px);font-weight:800;line-height:.88;--x:50%;--y:50%;
+background:radial-gradient(circle 260px at var(--x) var(--y),var(--blood),var(--ink) 70%);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;width:fit-content;cursor:default}
+.drip{position:absolute;left:62%;top:92%;width:14px;height:14px;background:var(--blood);border-radius:0 50% 50% 50%;transform:rotate(45deg);animation:drip 3.2s 1s ease-in infinite;opacity:0}
+@keyframes drip{0%{opacity:0;transform:rotate(45deg) translate(0,0) scale(.3)}15%{opacity:1;transform:rotate(45deg) translate(0,0) scale(1)}100%{opacity:0;transform:rotate(45deg) translate(70px,70px)}}
+.tag{margin:26px 0 12px;font:700 clamp(20px,3vw,30px) 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em}
+#role{color:var(--blood)}#role::after{content:'|';animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin-top:64px;border-top:2px solid var(--ink)}
+.stats div{padding:20px 16px 0 0}
+.stats b{display:block;font:800 48px 'Bricolage Grotesque',sans-serif;color:var(--blood);letter-spacing:-.04em}
+.stats span{color:var(--mute);font-size:15px}
+/* about */
+.cols{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,5vw,64px)}
+.cols p{margin-bottom:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.panel h3{font-size:22px;margin-bottom:12px}
+.panel li{margin:0 0 10px 18px}
+.belt{height:12px;border-radius:99px;background:linear-gradient(90deg,#fff 0 20%,#e8b730 20% 40%,#2a8f3d 40% 60%,#7a4a1f 60% 80%,#111 80%);border:1px solid var(--line);margin:14px 0 6px}
+/* timeline */
+.tl{border-left:3px solid var(--blood);margin-left:6px}
+.job{position:relative;padding:0 0 10px 28px}
+.job::before{content:'';position:absolute;left:-10px;top:22px;width:17px;height:17px;border-radius:50%;background:var(--bg);border:3px solid var(--blood);transition:.2s}
+.job.open::before{background:var(--blood)}
+.job button{all:unset;display:flex;justify-content:space-between;gap:16px;width:100%;box-sizing:border-box;padding:16px 0;cursor:pointer;border-bottom:1px solid var(--line)}
+.job button:focus-visible{outline:3px solid var(--blood)}
+.job h3{font-size:24px;margin-bottom:4px}
+.job small{color:var(--mute);font-size:15px}
+.job .d{color:var(--blood);font-weight:700;white-space:nowrap;font-size:14px}
+.job ul{display:none;padding:14px 0 10px 18px;color:var(--mute)}
+.job.open ul{display:block;animation:in .3s}
+.job li{margin-bottom:6px}
+.sub{font:800 28px 'Bricolage Grotesque',sans-serif;margin:44px 0 12px;letter-spacing:-.03em}
+/* portfolio */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{border:1.5px solid var(--ink);background:none;color:var(--ink);padding:8px 18px;border-radius:99px;cursor:pointer;font:500 15px 'DM Sans',sans-serif}
+.filters button.on{background:var(--blood);border-color:var(--blood);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line);transition:.25s;display:block}
+.tile:hover,.tile:focus-visible{transform:translateY(-6px) rotate(-.6deg);border-color:var(--blood)}
+.tile:focus-visible{outline:3px solid var(--blood)}
+.cover{height:190px;display:grid;place-items:center;font:800 70px 'Bricolage Grotesque',sans-serif;color:#fff;letter-spacing:-.05em;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;width:140%;height:70%;bottom:-45%;left:-20%;background:rgba(255,255,255,.14);border-radius:50%;transition:.4s}
+.tile:hover .cover::after{bottom:-20%}
+.tile .meta{padding:16px 18px 20px}
+.tile h3{font-size:21px;margin-bottom:6px}
+.tile p{color:var(--mute);font-size:15px;line-height:1.45}
+.tile[hidden]{display:none}
+dialog{border:none;border-radius:20px;padding:0;max-width:min(560px,94vw);width:100%;background:var(--card);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(40,0,5,.6);backdrop-filter:blur(4px)}
+dialog .cover{height:170px}
+dialog .in{padding:24px 26px 28px}
+dialog h3{font-size:30px;margin-bottom:10px}
+dialog ul{margin:12px 0 18px 18px;color:var(--mute)}
+.x{position:absolute;right:12px;top:12px;z-index:2;background:rgba(0,0,0,.45);color:#fff;border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px}
+.file{font-size:14px;color:var(--mute)}
+/* skills */
+#q{width:100%;max-width:420px;padding:12px 18px;border-radius:99px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);font:500 16px 'DM Sans',sans-serif;margin-bottom:8px}
+.sg{margin-top:30px}
+.sg h3{font-size:22px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:7px 15px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:15px;transition:.2s;cursor:default}
+.chip:hover{border-color:var(--blood);color:var(--blood)}
+.chip.hit{background:var(--blood);color:#fff;border-color:var(--blood);transform:scale(1.06)}
+.chip.dim{opacity:.25}
+.ai{background:linear-gradient(90deg,var(--blood),var(--deep));color:#fff;border:0}
+/* contact */
+form{display:grid;gap:14px;max-width:520px;margin-top:24px}
+input,textarea{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:16px 'DM Sans',sans-serif}
+input:focus,textarea:focus{border-color:var(--blood);outline:none}
+.links a{display:block;font:700 clamp(22px,4vw,36px) 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;text-decoration:none;padding:6px 0;border-bottom:1px solid var(--line);transition:.2s}
+.links a:hover{color:var(--blood);padding-left:12px}
+footer{padding:28px clamp(16px,4vw,48px);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--mute);font-size:14px}
+#oss{position:fixed;inset:0;z-index:99;background:var(--blood);display:grid;place-items:center;color:#fff;font:800 clamp(90px,26vw,320px) 'Bricolage Grotesque',sans-serif;letter-spacing:-.06em;clip-path:circle(0 at 50% 50%);pointer-events:none;transition:clip-path .7s cubic-bezier(.7,0,.2,1)}
+#oss.go{clip-path:circle(150% at 50% 50%)}
+#oss small{position:absolute;bottom:8%;font:500 18px 'DM Sans',sans-serif;letter-spacing:0}
+#toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:99px;font-size:15px;transition:.3s;z-index:50}
+#toast.show{transform:translate(-50%,0)}
+@media(max-width:760px){.cols{grid-template-columns:1fr}.job button{flex-direction:column;gap:2px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{header,footer,#theme,.row,.filters,#oss,#toast{display:none!important}.page{display:block!important;padding:12px 0;break-inside:avoid}#portfolio,#contact,#home{display:none!important}.job ul{display:block!important}body{background:#fff;color:#000;font-size:12px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home" aria-label="Drew Dupuy home">drew dupuy<i id="dot" title="Go on, press me"></i></a>
+  <nav aria-label="Main">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#portfolio">Portfolio</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+  <button id="theme" aria-label="Toggle dark mode">◐</button>
+</header>
+
+<main>
+<section class="page" id="home">
+  <h1 class="hero disp" id="hero">Drew<br>Dupuy<span class="drip"></span></h1>
+  <p class="tag">I design <span id="role"></span></p>
+  <p class="lead">Graphic designer, WordPress builder and digital marketer from Kloof, KwaZulu-Natal. I make brands look sharp, sites run fast, and 100-page magazines land on time.</p>
+  <div class="row"><a class="btn" href="#portfolio">See the work</a><a class="btn ghost" href="#contact">Hire me</a></div>
+  <div class="stats">
+    <div><b data-n="3">0</b><span>years freelancing</span></div>
+    <div><b data-n="100">0</b><span>pages per magazine issue</span></div>
+    <div><b data-n="7">0</b><span>years teaching karate</span></div>
+    <div><b data-n="4">0</b><span>domains managed at once</span></div>
+  </div>
+</section>
+
+<section class="page" id="about">
+  <h2>About <b>me</b></h2>
+  <div class="cols">
+    <div>
+      <p class="lead">I'm a multidisciplinary creative who is just as comfortable in InDesign as in cPanel.</p>
+      <p>My work spans graphic design, digital marketing, social media, WordPress websites, hosting and domain admin, photography and video. I've worked in dealerships, agencies and growing businesses, so I know how design has to earn its keep: it needs to sell, scale and be delivered on a deadline.</p>
+      <p>I'm now studying Computer Science at University of the People while freelancing, volunteering for a rescue NPO and teaching karate. The mix keeps me practical, calm under pressure and good with people of any age.</p>
+      <div class="row"><button class="btn ghost" onclick="window.print()">Save CV as PDF</button></div>
+    </div>
+    <div>
+      <div class="panel"><h3>Education</h3>
+        <ul><li>Associate's in Computer Science, University of the People (2025 – present)</li><li>Matric, Hillcrest High School (2021)</li></ul></div>
+      <div class="panel" style="margin-top:16px"><h3>Off the screen</h3>
+        <p style="font-size:15px">Sensei and 40% co-owner of Highway JKA Karate Club. SA Protea colours 2018 – 2024. WKF-qualified referee. CPR and First Aid level 2 trained.</p>
+        <div class="belt" title="Belt colours: white to black"></div><small style="color:var(--mute)">Working towards San Dan</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="experience">
+  <h2>Where I've <b>worked</b></h2>
+  <p class="lead" style="margin-bottom:28px">Tap a role to open it.</p>
+  <div class="tl" id="tl"></div>
+  <div class="sub">Karate, volunteering &amp; other</div>
+  <div class="tl" id="tl2"></div>
+</section>
+
+<section class="page" id="portfolio">
+  <h2>Selected <b>work</b></h2>
+  <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="page" id="skills">
+  <h2>Toolbox</h2>
+  <input id="q" type="search" placeholder="Search a skill, e.g. WordPress" aria-label="Search skills">
+  <div id="sk"></div>
+</section>
+
+<section class="page" id="contact">
+  <h2>Let's <b>talk</b></h2>
+  <div class="cols">
+    <div class="links">
+      <a href="mailto:drew.s.dupuy@gmail.com">drew.s.dupuy@gmail.com</a>
+      <a href="tel:+27728464722">072 846 4722</a>
+      <a href="https://za.linkedin.com/in/drew-dupuy-62463b179" target="_blank" rel="noopener">LinkedIn</a>
+      <p style="margin-top:18px;color:var(--mute)">Kloof, KwaZulu-Natal, South Africa. Open to freelance projects and full-time roles.</p>
+      <div class="row"><button class="btn ghost" id="copy">Copy email</button></div>
+    </div>
+    <form id="f">
+      <input id="fn" placeholder="Your name" required aria-label="Your name">
+      <input id="fe" type="email" placeholder="Your email" required aria-label="Your email">
+      <textarea id="fm" rows="5" placeholder="What are we making?" required aria-label="Message"></textarea>
+      <button class="btn" type="submit">Send email</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<dialog id="dlg"><button class="x" id="dx" aria-label="Close">✕</button><div id="dc"></div></dialog>
+<div id="oss" aria-hidden="true">OSS!<small>That's karate for "I hear you". Thanks for finding this.</small></div>
+<div id="toast" role="status"></div>
+<footer><span>© 2026 Drew Dupuy. Built by hand in one file.</span><span>Psst: press the red drop in the logo five times.</span></footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const jobs=[
+["Freelance Website Designer","WebDen","Jan 2024 – now",["Build and manage WordPress websites and hosting servers","Maintain existing client sites; audit performance, speed and online activity","Write SEO and GEO-optimised blog posts","Migrate and rebuild sites on WordPress; run WordPress user training"]],
+["Freelance Graphic Designer","Drafted Designs","Jan 2024 – now",["Create marketing content, social posts and written copy","Design office stationery and personalised adverts for sales reps","Produce photography and video for campaigns","Prepare website-ready content and assets"]],
+["Graphic designer and website support","Lonehill Media (Pty) Ltd – retainer","2026 – now",["Design print and digital articles for The Gardener, Die Tuinier and Grow To Eat","Create adverts from PVC ad boards to backdrop banners and billboards","Build preset layouts and templates for print and digital","Keep sites healthy and fast; update pages and plugins; build and deploy sites for customers","Create illustrations, logos and assets"]],
+["Graphic designer and website support","WeighLess (Pty) Ltd – retainer","2025 – now",["Design a monthly 100-page digital magazine and a trimonthly 100-page printed mag","Design car decals, PVC ad boards and gazebos","Debug and update the website, content and blog posts","Manage printers, online sales and orders; give website customer support","Introduce up-to-date software and apps across the company"]],
+["Graphic Designer","Alpine VW Pinetown","Jul – Dec 2023",["Designed 8–10 vehicle advert backgrounds a month","Built vehicle adverts from current sales offers","Shot dealership photography and video","Helped customers on the showroom floor"]],
+["Interim Marketing Coordinator","Hospanoe","Jan – Jul 2023",["Designed branding for the company and related family companies","Ran adverts and Facebook and Instagram campaigns","Built meeting and event presentations","Managed the website, hosting, backups, domains and email for 4 domains","Acted as Office Manager for the General Manager"]],
+["Interim Marketing Coordinator and Sales Agent","Tech5 Group","Feb – Dec 2022",["Handled telesales, digital sales and cold calling","Managed company social media","In-house designer for marketing material"]],
+["Intern: Web Designer","SDDS Web Design","Jul – Dec 2021",["Designed websites and adverts for clients","Posted to Facebook and answered client requests"]]];
+const other=[
+["Senior Instructor and Co-owner (Sensei)","Highway JKA Karate Club","2019 – 2026",["40% ownership; teach ages 5 to 65, mostly 5 to 16","Manage a team of teachers and instructors; plan curriculums","Design the club's graphics and marketing","SA Protea colours 2018 – 2024; registered Safeguarding Officer (SafeGard, SASCOC)","First brown belt in the club's history to start teaching before black belt","CPR trained, First Aid level 2"]],
+["Volunteer Graphic Designer and Website Manager","Start Rescue (NPO)","2022 – now",["Website construction, fundraising initiatives and design work for the marketing team"]],
+["Volunteer Karate Referee","World Karate Federation","2018 – 2025",["WKF Corner Judge D, C, B, A and Center Referee up to national level","WKF Corner Judge D international; SA JKA National Level Coach"]],
+["Au Pair (part-time)","Skinner Family","2024 – 2025",["School transport, child supervision, meals and homework support"]]];
+function tl(el,arr){el.innerHTML=arr.map(j=>`<div class="job"><button aria-expanded="false"><span><h3>${j[0]}</h3><small>${j[1]}</small></span><span class="d">${j[2]}</span></button><ul>${j[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+el.onclick=e=>{const b=e.target.closest('button');if(!b)return;const o=b.parentNode.classList.toggle('open');b.setAttribute('aria-expanded',o)}}
+tl($('#tl'),jobs);tl($('#tl2'),other);
+$('#tl .job').classList.add('open');
+
+const works=[
+["WeighLess Magazine","Print","Monthly 100-page digital magazine, plus a printed edition every three months.","#b3121f,#5e0a12","W",["Layout, typography and cover design","Print-ready artwork and printer liaison","Also: car decals, PVC ad boards and gazebos"]],
+["The Gardener family","Print","Features and layouts for The Gardener, Die Tuinier and Grow To Eat.","#2a6b3a,#12361c","G",["Reusable page templates for print and digital","Illustrations and ad artwork"]],
+["Billboards & backdrops","Print","Large-format adverts from PVC boards to billboards and backdrop banners.","#1a1112,#b3121f","B",["Designed for distance reading","Prepared to printer specs"]],
+["Alpine VW offers","Social","Eight to ten backgrounds a month, turned into live vehicle promotions.","#1e3a8a,#0b1b4a","V",["Fast monthly turnaround","Built around the current sales offers"]],
+["WordPress builds","Web","Client sites built, migrated and tuned for speed on WordPress.","#b3121f,#1a1112","WP",["Divi and Elementor builds","Hosting, backups, domains and email","SEO and GEO blog content"]],
+["Start Rescue","Brand","Website and fundraising design for an animal rescue NPO.","#c2410c,#7c2d12","S",["Volunteer work since 2022","Campaign graphics and site management"]],
+["Highway JKA","Brand","Graphics, posters and marketing for a karate club.","#111,#b3121f","空",["Grading posters, social posts and apparel ideas","Designed by the club's own Sensei"]],
+["Hospanoe branding","Brand","Identity for a company and its related family companies.","#5e0a12,#b3121f","H",["Logos, adverts and presentations","Facebook and Instagram campaigns"]]];
+const cats=['All',...new Set(works.map(w=>w[1]))];
+$('#filters').innerHTML=cats.map((c,i)=>`<button class="${i?'':'on'}">${c}</button>`).join('');
+$('#grid').innerHTML=works.map((w,i)=>{const[a,b]=w[4].split?w[3].split(','):[];return`<button class="tile" data-c="${w[1]}" data-i="${i}"><div class="cover" style="background-image:linear-gradient(135deg,${a},${b})">${w[4]}</div><div class="meta"><h3>${w[0]}</h3><p>${w[2]}</p></div></button>`}).join('');
+$('#filters').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#filters button').forEach(x=>x.classList.toggle('on',x===b));$$('.tile').forEach(t=>t.hidden=b.textContent!=='All'&&t.dataset.c!==b.textContent)};
+const dlg=$('#dlg');
+$('#grid').onclick=e=>{const t=e.target.closest('.tile');if(!t)return;const w=works[t.dataset.i],[a,b]=w[3].split(',');
+$('#dc').innerHTML=`<div class="cover" id="dcov" style="background-image:linear-gradient(135deg,${a},${b})">${w[5]?w[4]:''}</div><div class="in"><h3>${w[0]}</h3><p style="color:var(--mute)">${w[2]}</p><ul>${w[5].map(x=>`<li>${x}</li>`).join('')}</ul><label class="file">Preview your own image here: <input type="file" accept="image/*" id="img"></label></div>`;
+$('#img').onchange=ev=>{const f=ev.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const u=`url(${r.result})`;$('#dcov').style.backgroundImage=u;$('#dcov').textContent='';t.querySelector('.cover').style.backgroundImage=u;t.querySelector('.cover').textContent=''};r.readAsDataURL(f)};
+dlg.showModal()};
+$('#dx').onclick=()=>dlg.close();dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+
+const skills={"Design & content":["Graphic Design and Branding","Adobe Creative Suite","Canva","GIMP","Filmora","FL Studio","Digital and Print","Presentation Design","Marketing Collateral","Copywriting"],
+"Web & hosting":["WordPress","Divi","Elementor","Web Design","Website Management","Web Hosting","cPanel","konsoleH","Domain Management","Email Configuration","SEO","GEO"],
+"Marketing & sales":["Digital Marketing","Social Media Management","Digital Advertising Support","HubSpot","Meta Business Suite","Telesales","Cold Calling","Lead Generation","Customer Communication"],
+"Photo & video":["Photography","Photo Manipulation","Videography","Video Editing"],
+"Work tools":["Microsoft Office","Google Workspace","ClickUp","Monday","WHMCS","QuickBooks","Office Administration"],
+"People":["Senior Instruction and Mentoring","Team Management","Curriculum Planning","Safeguarding"],
+"AI":["Claude","Claude Code","Claude Design","ChatGPT","Codex","Gemini","AI Active"]};
+$('#sk').innerHTML=Object.entries(skills).map(([k,v])=>`<div class="sg"><h3>${k}</h3><div class="chips">${v.map(s=>`<span class="chip${s==='AI Active'?' ai':''}">${s}</span>`).join('')}</div></div>`).join('');
+$('#q').oninput=e=>{const v=e.target.value.trim().toLowerCase();$$('.chip').forEach(c=>{const m=v&&c.textContent.toLowerCase().includes(v);c.classList.toggle('hit',!!m);c.classList.toggle('dim',!!v&&!m)})};
+$('.chip.ai').title='Yes, very.';
+
+/* routing */
+const pages=$$('.page'),links=$$('nav a');
+function route(){const h=(location.hash||'#home').slice(1);const id=pages.some(p=>p.id===h)?h:'home';
+pages.forEach(p=>p.classList.toggle('on',p.id===id));links.forEach(a=>a.classList.toggle('on',a.hash==='#'+id));
+scrollTo(0,0);if(id==='home')count()}
+addEventListener('hashchange',route);
+
+/* hero ink + typed role + counters */
+const hero=$('#hero');
+hero.onmousemove=e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--x',e.clientX-r.left+'px');hero.style.setProperty('--y',e.clientY-r.top+'px')};
+const roles=['brands that stick.','websites that load fast.','magazines, 100 pages at a time.','campaigns that get noticed.'];let ri=0,ci=0,del=0;
+(function type(){const w=roles[ri],el=$('#role');if(!del){el.textContent=w.slice(0,++ci);if(ci===w.length){del=1;return setTimeout(type,1700)}}else{el.textContent=w.slice(0,--ci);if(!ci){del=0;ri=(ri+1)%roles.length}}setTimeout(type,del?30:70)})();
+function count(){$$('[data-n]').forEach(el=>{const n=+el.dataset.n;let i=0;const s=Math.max(1,Math.ceil(n/30));const t=setInterval(()=>{i=Math.min(n,i+s);el.textContent=i+(n===100?'':'+');if(i>=n)clearInterval(t)},30)})}
+
+/* theme */
+const root=document.documentElement;
+if(matchMedia('(prefers-color-scheme:dark)').matches)root.dataset.theme='dark';
+$('#theme').onclick=()=>root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';
+
+/* contact */
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText('drew.s.dupuy@gmail.com').then(()=>toast('Email copied'),()=>toast('Copy failed. Select it from the link instead.'))};
+$('#f').onsubmit=e=>{e.preventDefault();const b=encodeURIComponent(`${$('#fm').value}\n\nFrom ${$('#fn').value} (${$('#fe').value})`);location.href=`mailto:drew.s.dupuy@gmail.com?subject=${encodeURIComponent('Website enquiry from '+$('#fn').value)}&body=${b}`;toast('Opening your email app')};
+
+/* hidden bits */
+let taps=0,buf='';
+function oss(){const o=$('#oss');o.classList.add('go');setTimeout(()=>o.classList.remove('go'),2000)}
+$('#dot').onclick=e=>{e.preventDefault();e.stopPropagation();if(++taps>=5){taps=0;oss()}};
+addEventListener('keydown',e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName))return;buf=(buf+e.key.toLowerCase()).slice(-3);if(buf==='oss')oss()});
+const t0=document.title;addEventListener('blur',()=>document.title='Come back, I was mid-sketch…');addEventListener('focus',()=>document.title=t0);
+route();
+</script>
+</body>
+</html>
